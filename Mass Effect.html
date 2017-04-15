@@ -1487,7 +1487,7 @@
             </tr>
             <tr>
                 <td><input type="text" class="sheet-number" name="attr_Weapon-Name" value="" /></td>
-                <td><input type="text" class="sheet-number" name="attr_Weapon-Type" value="@{Type}"disabled='true' /></td>
+                <td><input type="text" class="sheet-number" name="attr_Weapon-Type" value="@{Type}"disabled='true'/></td>
                 <td>
                     <select class="sheet-number" name="attr_Weapon-Type" >
                         <option value="Pistols">Pistols</option>
@@ -1521,34 +1521,26 @@
                     </select>
                 </td>
                 <td><input type="number" class="sheet-number" name="attr_Weapon-Critical" value="X" style="width:26px"/><input type="number" class="sheet-number" name="attr_Weapon-Critical_multiplier" value="2" style="width:24px"/></td>
+                <td><input type="number" class="sheet-number" name="attr_Weapon-Recoil" value="0" placeholder="-3, etc."/></td>
                 <td><input type="number" class="sheet-number" name="attr_Weapon-Ammo" value="0"  style="width:100px"/></td>
                 <th></th>
             </tr>
             <tr>
-                <td colspan="3"><input type="text" class="sheet-number" name="attr_Weapon-Special_Properties" value="" style="width:100%"/></td>
-                <td><input type="text" class="sheet-number" name="attr_Weapon-Damage" value="1d6" style="width:40px;"/></td>
-                <td><input type="text" class="sheet-number" name="attr_Weapon-Damage_Type" value="" placeholder="Slashing, etc."></td>
-                <td>
-                    <select class="sheet-number" name="attr_Weapon-Damage_bonus" style="width:60px;" >
-                        <option value="0">None</option>
-                        <option value="[[floor(@{Strength-mod}/2)]]">1/2 Str</option>
-                        <option value="[[@{Strength-mod}]]" selected>Str</option>
-                        <option value="[[floor(@{Strength-mod}*1.5)]]">1 1/2 Str</option>
-                        <option value="[[@{Strength-mod}*2]]">2x Str</option>
-                        <option value="@{Dexterity-mod}">Dex</option>
-                    </select>
-                </td>
-                <td><input type="text" class="sheet-number" name="attr_Weapon-Damage_Misc" value="0" style="width:50px;"/></td>
+                <td colspan="3"><input type="text" class="sheet-number" name="attr_Weapon-Variant_Properties" value="" style="width:100%"/></td>
+                <td><input type="text" class="sheet-number" name="attr_Weapon-Damage" value="1d6" placeholder="1d6/1d6, 1d6, etc." style="width:80px;"/></td>
+                <td><input type="text" class="sheet-number" name="attr_Weapon-Variant_Type" value="" placeholder="I, II, etc." style="width:40px"></td>
+                <td><input type="text" class="sheet-number" name="attr_Weapon-Damage_Type" value="" placeholder="Medium, Small, etc." style="width:40px"></td>
                 <td><input type="number" class="sheet-number" name="attr_Weapon-Range" value="0" style="width:100px"/></td>
+                <td><input type="number" class="sheet-number" name="attr_Weapon-Weight" value="" placeholder="Medium 5 lb, etc." style="width:100px;"/></td>
                 <th></th>
             </tr>
             <tr>
-                <th class="sheet-heading" colspan="3">Special Properties</th>
+                <th class="sheet-heading" colspan="3">Variant Properties</th>
                 <th class="sheet-heading">Damage<br>Dice</th>
                 <th class="sheet-heading">Damage<br>Type</th>
-                <th class="sheet-heading">Damage<br>Bonus</th>
-                <th class="sheet-heading">Misc<br>Bonus</th>
-                <th class="sheet-heading" style="width:100px" >Range</th>
+                <th class="sheet-heading">Variant<br>Type</th>
+                <th class="sheet-heading">Weight</th>
+                <th class="sheet-heading" style="width:50px" >Range</th>
                 <th></th>
             </tr>
         </table>
@@ -1557,7 +1549,7 @@
 <!-- Tab 3 Feats & Talents -->
 <div class="sheet-section-3">
     <div class='sheet-2colrow'>
-        <h3>Feats & Talents</h3>
+        <h3>Feats & Powers</h3>
         <div class='sheet-col'>
             <h4>Feats</h4>
             <fieldset class="repeating_Feats">
@@ -1579,20 +1571,20 @@
             </fieldset>
         </div>
         <div class='sheet-col'>
-            <h4>Talents</h4>
-            <fieldset class="repeating_Talents">
+            <h4>Biotic Powers</h4>
+            <fieldset class="repeating_Powers">
                 <table class="sheet-table">
                     <tr>
-                        <td><button type="roll" class="sheet-btn" name="roll_Talent-show" value="&{template:show}{{character= @{character_name}}}  {{title= @{Talent-name}}}{{details= @{Talent-details}}}" style="width:60px;">Show</button></td>
-                        <td><input type="text" class="sheet-number" name="attr_Talent-name" placeholder="Talent Name" style="width:200px;"/></td>
-                        <th><input type="checkbox" class="sheet-bigcheck" name="attr_Talent-show" value="1"/><span></span></th>
+                        <td><button type="roll" class="sheet-btn" name="roll_Power-show" value="&{template:show}{{character= @{character_name}}}  {{title= @{Power-name}}}{{details= @{Power-details}}}" style="width:60px;">Show</button></td>
+                        <td><input type="text" class="sheet-number" name="attr_Power-name" placeholder="Power Name" style="width:200px;"/></td>
+                        <th><input type="checkbox" class="sheet-bigcheck" name="attr_Power-show" value="1"/><span></span></th>
                     </tr>
                 </table>
-                <input type="checkbox" class="sheet-hidden sheet-hider" name="attr_Talent-show" value="1"/><span></span>
+                <input type="checkbox" class="sheet-hidden sheet-hider" name="attr_Power-show" value="1"/><span></span>
                 <div class="sheet-hold">
                     <table class="sheet-table" style="width:100%;">
                         <tr>
-                            <td><textarea class="sheet-notes" name="attr_Talent-details" wrap="soft" placeholder="Talent Details"></textarea></td>
+                            <td><textarea class="sheet-notes" name="attr_Power-details" wrap="soft" placeholder="Power Details"></textarea></td>
                         </tr>
                     </table>
                 </div>
