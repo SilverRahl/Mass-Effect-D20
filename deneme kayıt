@@ -225,3 +225,139 @@
         </div>
     </div>
 </div>
+
+    		
+    </div>
+</div>
+<!-- rolltemplates -->
+<rolltemplate class="sheet-rolltemplate-show">
+    <table>
+        <tr>
+            <th>{{title}}</th>
+        </tr>
+        <tr>
+            <td><i>{{details}}</i></td>
+        </tr>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-attack">
+    <table>
+        <tr>
+            <td class="sheet-detail" colspan="2"><i><b>{{character}}</b> attacks with {{weapon}} </i></td>    
+        </tr>
+        <tr>
+            <td>Attack</td>
+            <td><span class="tcat">{{attack}}</span></td>
+        </tr>            
+            {{#rollWasCrit() attack}}
+        <tr>
+                <td class="sheet-confirm">Confirm:</td>
+                <td class="sheet-confirm"><span class="tcat">{{confirm}}</span></td>
+        </tr>
+            {{/rollWasCrit() attack}}
+        <tr>
+            <td>Damage</td>
+            <td class="sheet-damage"><span class="tcat">{{damage}}</span></td>
+        </tr>            
+            {{#rollWasCrit() attack}}
+        <tr>
+                <td class="sheet-confirm">Crit:</td>
+                <td class="sheet-confirm sheet-damage"><span class="tcat">{{dmgcrit}}</span></td>
+        </tr>
+            {{/rollWasCrit() attack}}
+        <tr>
+            <td colspan="2">{{details}}</td>
+        </tr> 
+        <tr>
+            <td class="sheet-last_left"></td>
+            <td class="sheet-last_right"></td>
+        </tr> 
+    </table>
+</rolltemplate>
+<rolltemplate class="sheet-rolltemplate-fx">
+    <table>
+        <tr>
+            <th colspan="2">{{fx}}</th>
+        </tr>
+        <tr>
+            <th>DC</th>
+            <th>{{DC}}</th>
+        </tr>
+        {{#Decriptors}} 
+        <tr>
+            <td>Decriptors</td>
+            <td>{{Decriptors}}</td>
+        </tr>
+        {{/Decriptors}} 
+        {{#Level}} 
+        <tr>
+            <td>Level</td>
+            <td>{{Level}}</td>
+        </tr>
+        {{/Level}} 
+
+        {{#Components}} 
+        <tr>
+            <td>Components</td>
+            <td>{{Components}}</td>
+        </tr>
+        {{/Components}} 
+
+        {{#Casting_Time}} 
+        <tr>
+            <td>Casting Time</td>
+            <td>{{Casting_Time}}</td>
+        </tr>
+        {{/Casting_Time}} 
+
+        {{#Range}} 
+        <tr>
+            <td>Range</td>
+            <td>{{Range}}</td>
+        </tr>
+        {{/Range}} 
+
+        {{#Effect}} 
+        <tr>
+            <td>Effect</td>
+            <td>{{Effect}}</td>
+        </tr>
+        {{/Effect}} 
+
+        {{#Area}} 
+        <tr>
+            <td>Area</td>
+            <td>{{Area}}</td>
+        </tr>
+        {{/Area}} 
+
+        {{#Duration}} 
+        <tr>
+            <td>Duration</td>
+            <td>{{Duration}}</td>
+        </tr>
+        {{/Duration}} 
+
+        {{#Saving_Throw}} 
+        <tr>
+            <td>Saving Throw</td>
+            <td>{{Saving_Throw}}</td>
+        </tr>
+        {{/Saving_Throw}} 
+
+        {{#Resistance}} 
+        <tr>
+            <td>Resistance</td>
+            <td>{{Resistance}}</td>
+        </tr>
+        {{/Resistance}} 
+
+        {{#Descriptive_Text}} 
+        <tr>
+            <td colspan="2"><i>{{Descriptive_Text}}</i></td>
+        </tr>
+        {{/Descriptive_Text}} 
+    </table>
+
+</rolltemplate>
+
