@@ -102,7 +102,7 @@
                     <tr>
                         <td><input type="text" class="sheet-text" name="attr_Age" style="width:100%"/></td>
                         <td><input type="text" class="sheet-text" name="attr_Gender" style="width:100%"/></td>
-                        <td><input type="text" class="sheet-text" name="attr_Nationality" style="width:100%"/></td>
+                        <td><input type="text" class="sheet-text" name="attr_Species" style="width:100%"/></td>
                     </tr>
                     <tr>
                         <th>Age</th>
@@ -142,8 +142,6 @@
 <span class="sheet-tab sheet-tab3" style='line-height: 20px;'><div class="sheet-smaller">Feats & Talents</div></span>
 <input type="radio" class="sheet-tab sheet-tab4" name="attr_core-tab" value="4" title="Gear" /> 
 <span class="sheet-tab sheet-tab4" style='line-height: 20px;'>Gear</span>
-<input type="radio" class="sheet-tab sheet-tab5" name="attr_core-tab" value="5" title="FX" /> 
-<span class="sheet-tab sheet-tab5" style='line-height: 20px;'>FX</span>
 <input type="radio" class="sheet-tab sheet-tab99" name="attr_core-tab" value="99" title="All" />
 <span class="sheet-tab sheet-tab99" style='line-height: 20px;'>All</span>    
 <br><br>
@@ -347,6 +345,23 @@
                     <td><input type="number" class="sheet-number" name="attr_Balance-Misc" value="0"/></td>
                 </tr>
                 <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Biotics-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Biotics" value="/e rolls Biotics [[1d20+@{Biotics}]]" >Biotics</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Biotics" value="[[@{Biotics-ability}+@{Biotics-Ranks}+@{Biotics-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Biotics-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Biotics-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Biotics-Misc" value="0" /></td>
+                </tr>
+                <tr>
                     <td><input type="checkbox" class="sheet-bigcheck" name="attr_Bluff-CrossClass" value="2"/><span></span></td>
                     <td><button type="roll" class="sheet-btn" name="roll_Bluff" value="/e rolls Bluff [[1d20+@{Bluff}]]" >Bluff</button></td>
                     <td><input type="number" class="sheet-ability" name="attr_Bluff" value="[[@{Bluff-ability}+@{Bluff-Ranks}+@{Bluff-Misc}]]" disabled="true"/></td>
@@ -381,23 +396,6 @@
                     <td><input type="number" class="sheet-number" name="attr_Climb-Misc" value="0" /></td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Computer_Use-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Computer_Use" value="/e rolls Computer Use [[1d20+@{Computer_Use}]]" >Computer Use</button></td>
-                    <td><input type="number" class="sheet-ability" name="attr_Computer_Use" value="[[@{Computer_Use-ability}+@{Computer_Use-Ranks}+@{Computer_Use-Misc}]]" disabled="true"/></td>
-                    <td>
-                        <select class="sheet-number" name="attr_Computer_Use-ability" style="width:40px;">
-                            <option value="@{Strength-mod}">Str</option>
-                            <option value="@{Dexterity-mod}">Dex</option>
-                            <option value="@{Constitution-mod}">Con</option>
-                            <option value="@{Intelligence-mod}" selected>Int</option>
-                            <option value="@{Wisdom-mod}">Wis</option>
-                            <option value="@{Charisma-mod}">Cha</option>
-                        </select>
-                    </td>
-                    <td><input type="number" class="sheet-number" name="attr_Computer_Use-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Computer_Use-Misc" value="0" /></td>
-                </tr>
-                <tr>
                     <td><input type="checkbox" class="sheet-bigcheck" name="attr_Concentration-CrossClass" value="2"/><span></span></td>
                     <td><button type="roll" class="sheet-btn" name="roll_Concentration" value="/e rolls Concentration [[1d20+@{Concentration}]]" >Concentration</button></td>
                     <td><input type="number" class="sheet-ability" name="attr_Concentration" value="[[@{Concentration-ability}+@{Concentration-Ranks}+@{Concentration-Misc}]]" disabled="true"/></td>
@@ -415,16 +413,11 @@
                     <td><input type="number" class="sheet-number" name="attr_Concentration-Misc" value="0" /></td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Craft1-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Craft1" value="/e rolls Craft:@{Craft1-type} [[1d20+@{Craft1}]]" >Craft</button></td>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Damping-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Damping" value="/e rolls Damping [[1d20+@{Damping}]]" >Damping</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Damping" value="[[@{Damping-ability}+@{Damping-Ranks}+@{Damping-Misc}]]" disabled="true"/>
                     <td>
-                        <div class="sheet-tooltips">
-                            <input type="number" class="sheet-ability" name="attr_Craft1" value="[[@{Craft1-ability}+@{Craft1-Ranks}+@{Craft1-Misc}]]" disabled="true"/>
-                            <span><input type="text" class="sheet-type" name="attr_Craft1-type" value="" placeholder="Craft type"/></span>
-                        </div>
-                    </td>
-                    <td>
-                        <select class="sheet-number" name="attr_Craft1-ability" style="width:40px;">
+                        <select class="sheet-number" name="attr_Damping-ability" style="width:40px;">
                             <option value="@{Strength-mod}">Str</option>
                             <option value="@{Dexterity-mod}">Dex</option>
                             <option value="@{Constitution-mod}">Con</option>
@@ -433,20 +426,15 @@
                             <option value="@{Charisma-mod}">Cha</option>
                         </select>
                     </td>
-                    <td><input type="number" class="sheet-number" name="attr_Craft1-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Craft1-Misc" value="0" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_Damping-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Damping-Misc" value="0" /></td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Craft2-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Craft2" value="/e rolls Craft:@{Craft2-type} [[1d20+@{Craft2}]]" >Craft</button></td>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Decryption-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Decryption" value="/e rolls Decryption [[1d20+@{Decryption}]]" >Decryption</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Decryption" value="[[@{Decryption-ability}+@{Decryption-Ranks}+@{Decryption-Misc}]]" disabled="true"/></td>
                     <td>
-                        <div class="sheet-tooltips">
-                            <input type="number" class="sheet-ability" name="attr_Craft2" value="[[@{Craft2-ability}+@{Craft2-Ranks}+@{Craft2-Misc}]]" disabled="true"/>
-                            <span><input type="text" class="sheet-type" name="attr_Craft2-type" value="" placeholder="Craft type"/></span>
-                        </div>
-                    </td>
-                    <td>
-                        <select class="sheet-number" name="attr_Craft2-ability" style="width:40px;">
+                        <select class="sheet-number" name="attr_Decryption-ability" style="width:40px;">
                             <option value="@{Strength-mod}">Str</option>
                             <option value="@{Dexterity-mod}">Dex</option>
                             <option value="@{Constitution-mod}">Con</option>
@@ -455,64 +443,8 @@
                             <option value="@{Charisma-mod}">Cha</option>
                         </select>
                     </td>
-                    <td><input type="number" class="sheet-number" name="attr_Craft2-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Craft2-Misc" value="0" /></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Craft3-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Craft3" value="/e rolls Craft:@{Craft3-type} [[1d20+@{Craft3}]]" >Craft</button></td>
-                    <td>
-                        <div class="sheet-tooltips">
-                            <input type="number" class="sheet-ability" name="attr_Craft3" value="[[@{Craft3-ability}+@{Craft3-Ranks}+@{Craft3-Misc}]]" disabled="true"/>
-                            <span><input type="text" class="sheet-type" name="attr_Craft3-type" value="" placeholder="Craft type"/></span>
-                        </div>
-                    </td>
-                    <td>
-                        <select class="sheet-number" name="attr_Craft3-ability" style="width:40px;">
-                            <option value="@{Strength-mod}">Str</option>
-                            <option value="@{Dexterity-mod}">Dex</option>
-                            <option value="@{Constitution-mod}">Con</option>
-                            <option value="@{Intelligence-mod}" selected>Int</option>
-                            <option value="@{Wisdom-mod}">Wis</option>
-                            <option value="@{Charisma-mod}">Cha</option>
-                        </select>
-                    </td>
-                    <td><input type="number" class="sheet-number" name="attr_Craft3-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Craft3-Misc" value="0" /></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Decipher_Script-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Decipher_Script" value="/e rolls Decipher Script [[1d20+@{Decipher_Script}]]" >Decipher Script *</button></td>
-                    <td><input type="number" class="sheet-ability" name="attr_Decipher_Script" value="[[@{Decipher_Script-ability}+@{Decipher_Script-Ranks}+@{Decipher_Script-Misc}]]" disabled="true"/></td>
-                    <td>
-                        <select class="sheet-number" name="attr_Decipher_Script-ability" style="width:40px;">
-                            <option value="@{Strength-mod}">Str</option>
-                            <option value="@{Dexterity-mod}">Dex</option>
-                            <option value="@{Constitution-mod}">Con</option>
-                            <option value="@{Intelligence-mod}" selected>Int</option>
-                            <option value="@{Wisdom-mod}">Wis</option>
-                            <option value="@{Charisma-mod}">Cha</option>
-                        </select>
-                    </td>
-                    <td><input type="number" class="sheet-number" name="attr_Decipher_Script-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Decipher_Script-Misc" value="0" /></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Demolitions-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Demolitions" value="/e rolls Demolitions [[1d20+@{Demolitions}]]" >Demolitions *</button></td>
-                    <td><input type="number" class="sheet-ability" name="attr_Demolitions" value="[[@{Demolitions-ability}+@{Demolitions-Ranks}+@{Demolitions-Misc}]]" disabled="true"/></td>
-                    <td>
-                        <select class="sheet-number" name="attr_Demolitions-ability" style="width:40px;">
-                            <option value="@{Strength-mod}">Str</option>
-                            <option value="@{Dexterity-mod}">Dex</option>
-                            <option value="@{Constitution-mod}">Con</option>
-                            <option value="@{Intelligence-mod}" selected>Int</option>
-                            <option value="@{Wisdom-mod}">Wis</option>
-                            <option value="@{Charisma-mod}">Cha</option>
-                        </select>
-                    </td>
-                    <td><input type="number" class="sheet-number" name="attr_Demolitions-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Demolitions-Misc" value="0" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_Decryption-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Decryption-Misc" value="0" /></td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" class="sheet-bigcheck" name="attr_Diplomacy-CrossClass" value="2"/><span></span></td>
@@ -532,23 +464,6 @@
                     <td><input type="number" class="sheet-number" name="attr_Diplomacy-Misc" value="0" /></td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Disable_Device-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Disable_Device" value="/e rolls Disable Device [[1d20+@{Disable_Device}]]" >Disable Device *</button></td>
-                    <td><input type="number" class="sheet-ability" name="attr_Disable_Device" value="[[@{Disable_Device-ability}+@{Disable_Device-Ranks}+@{Disable_Device-Misc}]]" disabled="true"/></td>
-                    <td>
-                        <select class="sheet-number" name="attr_Disable_Device-ability" style="width:40px;">
-                            <option value="@{Strength-mod}">Str</option>
-                            <option value="@{Dexterity-mod}">Dex</option>
-                            <option value="@{Constitution-mod}">Con</option>
-                            <option value="@{Intelligence-mod}" selected>Int</option>
-                            <option value="@{Wisdom-mod}">Wis</option>
-                            <option value="@{Charisma-mod}">Cha</option>
-                        </select>
-                    </td>
-                    <td><input type="number" class="sheet-number" name="attr_Disable_Device-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Disable_Device-Misc" value="0" /></td>
-                </tr>
-                <tr>
                     <td><input type="checkbox" class="sheet-bigcheck" name="attr_Disguise-CrossClass" value="2"/><span></span></td>
                     <td><button type="roll" class="sheet-btn" name="roll_Disguise" value="/e rolls Disguise [[1d20+@{Disguise}]]" >Disguise</button></td>
                     <td><input type="number" class="sheet-ability" name="attr_Disguise" value="[[@{Disguise-ability}+@{Disguise-Ranks}+@{Disguise-Misc}]]" disabled="true"/></td>
@@ -566,45 +481,11 @@
                     <td><input type="number" class="sheet-number" name="attr_Disguise-Misc" value="0" /></td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Drive-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Drive" value="/e rolls Drive [[1d20+@{Drive}]]" >Drive</button></td>
-                    <td><input type="number" class="sheet-ability" name="attr_Drive" value="[[@{Drive-ability}+@{Drive-Ranks}+@{Drive-Misc}]]" disabled="true"/></td>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Electronics-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Electronics" value="/e rolls Electronics [[1d20+@{Electronics}]]" >Electronics</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Electronics" value="[[@{Electronics-ability}+@{Electronics-Ranks}+@{Electronics-Misc}]]" disabled="true"/></td>
                     <td>
-                        <select class="sheet-number" name="attr_Drive-ability" style="width:40px;">
-                            <option value="@{Strength-mod}">Str</option>
-                            <option value="@{Dexterity-mod}" selected>Dex</option>
-                            <option value="@{Constitution-mod}">Con</option>
-                            <option value="@{Intelligence-mod}">Int</option>
-                            <option value="@{Wisdom-mod}">Wis</option>
-                            <option value="@{Charisma-mod}">Cha</option>
-                        </select>
-                    </td>
-                    <td><input type="number" class="sheet-number" name="attr_Drive-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Drive-Misc" value="0" /></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Escape_Artist-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Escape_Artist" value="/e rolls Escape Artist [[1d20+@{Escape_Artist}]]" >Escape Artist</button></td>
-                    <td><input type="number" class="sheet-ability" name="attr_Escape_Artist" value="[[@{Escape_Artist-ability}+@{Escape_Artist-Ranks}+@{Escape_Artist-Misc}]]" disabled="true"/></td>
-                    <td>
-                        <select class="sheet-number" name="attr_Escape_Artist-ability" style="width:40px;">
-                            <option value="@{Strength-mod}">Str</option>
-                            <option value="@{Dexterity-mod}" selected>Dex</option>
-                            <option value="@{Constitution-mod}">Con</option>
-                            <option value="@{Intelligence-mod}">Int</option>
-                            <option value="@{Wisdom-mod}">Wis</option>
-                            <option value="@{Charisma-mod}">Cha</option>
-                        </select>
-                    </td>
-                    <td><input type="number" class="sheet-number" name="attr_Escape_Artist-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Escape_Artist-Misc" value="0" /></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Forgery-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Forgery" value="/e rolls Forgery [[1d20+@{Forgery}]]" >Forgery</button></td>
-                    <td><input type="number" class="sheet-ability" name="attr_Forgery" value="[[@{Forgery-ability}+@{Forgery-Ranks}+@{Forgery-Misc}]]" disabled="true"/></td>
-                    <td>
-                        <select class="sheet-number" name="attr_Forgery-ability" style="width:40px;">
+                        <select class="sheet-number" name="attr_Electronics-ability" style="width:40px;">
                             <option value="@{Strength-mod}">Str</option>
                             <option value="@{Dexterity-mod}">Dex</option>
                             <option value="@{Constitution-mod}">Con</option>
@@ -613,8 +494,25 @@
                             <option value="@{Charisma-mod}">Cha</option>
                         </select>
                     </td>
-                    <td><input type="number" class="sheet-number" name="attr_Forgery-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Forgery-Misc" value="0" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_Electronics-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Electronics-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_First_Aid-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_First_Aid" value="/e rolls First Aid [[1d20+@{First_Aid}]]" >First Aid</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_First_Aid" value="[[@{First_Aid-ability}+@{First_Aid-Ranks}+@{First_Aid-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_EFirst_Aid-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}" selected>Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_First_Aid-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_First_Aid-Misc" value="0" /></td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" class="sheet-bigcheck" name="attr_Gamble-CrossClass" value="2"/><span></span></td>
@@ -626,8 +524,8 @@
                             <option value="@{Dexterity-mod}">Dex</option>
                             <option value="@{Constitution-mod}">Con</option>
                             <option value="@{Intelligence-mod}">Int</option>
-                            <option value="@{Wisdom-mod}" selected>Wis</option>
-                            <option value="@{Charisma-mod}">Cha</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}" selected>Cha</option>
                         </select>
                     </td>
                     <td><input type="number" class="sheet-number" name="attr_Gamble-Ranks" value="0"/></td>
@@ -651,21 +549,38 @@
                     <td><input type="number" class="sheet-number" name="attr_Gather_Information-Misc" value="0" /></td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Handle_Animal-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Handle_Animal" value="/e rolls Handle Animal [[1d20+@{Handle_Animal}]]" >Handle Animal *</button></td>
-                    <td><input type="number" class="sheet-ability" name="attr_Handle_Animal" value="[[@{Handle_Animal-ability}+@{Handle_Animal-Ranks}+@{Handle_Animal-Misc}]]" disabled="true"/></td>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Hacking-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Hacking" value="/e rolls Hacking [[1d20+@{Hacking}]]" >Hacking *</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Hacking" value="[[@{Hacking-ability}+@{Hacking-Ranks}+@{Hacking-Misc}]]" disabled="true"/></td>
                     <td>
-                        <select class="sheet-number" name="attr_Handle_Animal-ability" style="width:40px;">
+                        <select class="sheet-number" name="attr_Hacking-ability" style="width:40px;">
                             <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Hacking-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Hacking-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Heavy_Weapon-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Heavy_Weapon" value="/e rolls Heavy Weapon [[1d20+@{Heavy_Weapon}]]" >Heavy Weapon</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Heavy_Weapon" value="[[@{Heavy_Weapon-ability}+@{Heavy_Weapon-Ranks}+@{Heavy_Weapon-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Heavy_Weapon-ability" style="width:40px;">
+                            <option value="@{Strength-mod}" selected>Str</option>
                             <option value="@{Dexterity-mod}">Dex</option>
                             <option value="@{Constitution-mod}">Con</option>
                             <option value="@{Intelligence-mod}">Int</option>
                             <option value="@{Wisdom-mod}">Wis</option>
-                            <option value="@{Charisma-mod}" selected>Cha</option>
+                            <option value="@{Charisma-mod}">Cha</option>
                         </select>
                     </td>
-                    <td><input type="number" class="sheet-number" name="attr_Handle_Animal-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Handle_Animal-Misc" value="0" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_Heavy_Weapon-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Heavy_Weapon-Misc" value="0" /></td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" class="sheet-bigcheck" name="attr_Hide-CrossClass" value="2"/><span></span></td>
@@ -736,16 +651,11 @@
                     <td><input type="number" class="sheet-number" name="attr_Jump-Misc" value="0" /></td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge1-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge1" value="/e rolls Knowledge:@{Knowledge1-type} [[1d20+@{Knowledge1}]]" >Knowledge</button></td>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge_Art-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge_Art" value="/e rolls Knowledge Art [[1d20+@{Knowledge_Art}]]" >Knowledge Art</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Knowledge_Art" value="[[@{Knowledge_Art-ability}+@{Knowledge_Art-Ranks}+@{Knowledge_Art-Misc}]]" disabled="true"/>
                     <td>
-                        <div class="sheet-tooltips">
-                            <input type="number" class="sheet-ability" name="attr_Knowledge1" value="[[@{Knowledge1-ability}+@{Knowledge1-Ranks}+@{Knowledge1-Misc}]]" disabled="true"/>
-                            <span><input type="text" class="sheet-type" name="attr_Knowledge1-type" value="" placeholder="Knowledge type"/></span>
-                        </div>
-                    </td>
-                    <td>
-                        <select class="sheet-number" name="attr_Knowledge1-ability" style="width:40px;">
+                        <select class="sheet-number" name="attr_Knowledge_Art-ability" style="width:40px;">
                             <option value="@{Strength-mod}">Str</option>
                             <option value="@{Dexterity-mod}">Dex</option>
                             <option value="@{Constitution-mod}">Con</option>
@@ -754,20 +664,15 @@
                             <option value="@{Charisma-mod}">Cha</option>
                         </select>
                     </td>
-                    <td><input type="number" class="sheet-number" name="attr_Knowledge1-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Knowledge1-Misc" value="0" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Art-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Art-Misc" value="0" /></td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge2-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge2" value="/e rolls Knowledge:@{Knowledge2-type} [[1d20+@{Knowledge2}]]" >Knowledge</button></td>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge_Astronomy-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge_Astronomy" value="/e rolls Knowledge Astronomy [[1d20+@{Knowledge_Astronomy}]]" >Knowledge Astronomy</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Knowledge_Astronomy" value="[[@{Knowledge_Astronomy-ability}+@{Knowledge_Astronomy-Ranks}+@{Knowledge_Astronomy-Misc}]]" disabled="true"/>
                     <td>
-                        <div class="sheet-tooltips">
-                            <input type="number" class="sheet-ability" name="attr_Knowledge2" value="[[@{Knowledge2-ability}+@{Knowledge2-Ranks}+@{Knowledge2-Misc}]]" disabled="true"/>
-                            <span><input type="text" class="sheet-type" name="attr_Knowledge2-type" value="" placeholder="Knowledge type"/></span>
-                        </div>
-                    </td>
-                    <td>
-                        <select class="sheet-number" name="attr_Knowledge2-ability" style="width:40px;">
+                        <select class="sheet-number" name="attr_Knowledge_Astronomy-ability" style="width:40px;">
                             <option value="@{Strength-mod}">Str</option>
                             <option value="@{Dexterity-mod}">Dex</option>
                             <option value="@{Constitution-mod}">Con</option>
@@ -776,20 +681,15 @@
                             <option value="@{Charisma-mod}">Cha</option>
                         </select>
                     </td>
-                    <td><input type="number" class="sheet-number" name="attr_Knowledge2-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Knowledge2-Misc" value="0" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Astronomy-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Astronomy-Misc" value="0" /></td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge3-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge3" value="/e rolls Knowledge:@{Knowledge3-type} [[1d20+@{Knowledge3}]]" >Knowledge</button></td>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge_Behavior_Sciences-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge_Behavior_Sciences" value="/e rolls Knowledge Behavior Sciences [[1d20+@{Knowledge_Behavior_Sciences}]]" >Knowledge Behavior Sciences</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Knowledge_Behavior_Sciences" value="[[@{Knowledge_Behavior_Sciences-ability}+@{Knowledge_Behavior_Sciences-Ranks}+@{Knowledge_Behavior_Sciences-Misc}]]" disabled="true"/>
                     <td>
-                        <div class="sheet-tooltips">
-                            <input type="number" class="sheet-ability" name="attr_Knowledge3" value="[[@{Knowledge3-ability}+@{Knowledge3-Ranks}+@{Knowledge3-Misc}]]" disabled="true"/>
-                            <span><input type="text" class="sheet-type" name="attr_Knowledge3-type" value="" placeholder="Knowledge type"/></span>
-                        </div>
-                    </td>
-                    <td>
-                        <select class="sheet-number" name="attr_Knowledge3-ability" style="width:40px;">
+                        <select class="sheet-number" name="attr_Knowledge_Behavior_Sciences-ability" style="width:40px;">
                             <option value="@{Strength-mod}">Str</option>
                             <option value="@{Dexterity-mod}">Dex</option>
                             <option value="@{Constitution-mod}">Con</option>
@@ -798,8 +698,195 @@
                             <option value="@{Charisma-mod}">Cha</option>
                         </select>
                     </td>
-                    <td><input type="number" class="sheet-number" name="attr_Knowledge3-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Knowledge3-Misc" value="0" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Behavior_Sciences-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Behavior_Sciences-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge_Biology-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge_Biology" value="/e rolls Knowledge Biology [[1d20+@{Knowledge_Biology}]]" >Knowledge Biology</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Knowledge_Biology" value="[[@{Knowledge_Biology-ability}+@{Knowledge_Biology-Ranks}+@{Knowledge_Biology-Misc}]]" disabled="true"/>
+                    <td>
+                        <select class="sheet-number" name="attr_Knowledge_Biology-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Biology-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Biology-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge_Business-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge_Business" value="/e rolls Knowledge Business [[1d20+@{Knowledge_Business}]]" >Knowledge Business</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Knowledge_Business" value="[[@{Knowledge_Business-ability}+@{Knowledge_Business-Ranks}+@{Knowledge_Business-Misc}]]" disabled="true"/>
+                    <td>
+                        <select class="sheet-number" name="attr_Knowledge_Business-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Business-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Business-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge_Civics-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge_Civics" value="/e rolls Knowledge Civics [[1d20+@{Knowledge_Civics}]]" >Knowledge Civics</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Knowledge_Civics" value="[[@{Knowledge_Civics-ability}+@{Knowledge_Civics-Ranks}+@{Knowledge_Civics-Misc}]]" disabled="true"/>
+                    <td>
+                        <select class="sheet-number" name="attr_Knowledge_Civics-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Civics-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Civics-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge_Current_Events-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge_Current_Events" value="/e rolls Knowledge Current Events [[1d20+@{Knowledge_Current_Events}]]" >Knowledge Current Events</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Knowledge_Current_Events" value="[[@{Knowledge_Current_Events-ability}+@{Knowledge_Current_Events-Ranks}+@{Knowledge_Current_Events-Misc}]]" disabled="true"/>
+                    <td>
+                        <select class="sheet-number" name="attr_Knowledge_Current_Events-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Current_Events-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Current_Events-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge_History-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge_History" value="/e rolls Knowledge History [[1d20+@{Knowledge_History}]]" >Knowledge History</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Knowledge_History" value="[[@{Knowledge_History-ability}+@{Knowledge_History-Ranks}+@{Knowledge_History-Misc}]]" disabled="true"/>
+                    <td>
+                        <select class="sheet-number" name="attr_Knowledge_History-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_History-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_History-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge_Physics-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge_Physics" value="/e rolls Knowledge Physics [[1d20+@{Knowledge_Physics}]]" >Knowledge Physics</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Knowledge_Physics" value="[[@{Knowledge_Physics-ability}+@{Knowledge_Physics-Ranks}+@{Knowledge_Physics-Misc}]]" disabled="true"/>
+                    <td>
+                        <select class="sheet-number" name="attr_Knowledge_Physics-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Physics-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Physics-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge_Popular_Culture-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge_Popular_Culture" value="/e rolls Knowledge Popular Culture [[1d20+@{Knowledge_Popular_Culture}]]" >Knowledge Popular Culture</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Knowledge_Popular_Culture" value="[[@{Knowledge_Popular_Culture-ability}+@{Knowledge_Popular_Culture-Ranks}+@{Knowledge_Popular_Culture-Misc}]]" disabled="true"/>
+                    <td>
+                        <select class="sheet-number" name="attr_Knowledge_Popular_Culture-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Popular_Culture-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Popular_Culture-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge_Streetwise-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge_Streetwise" value="/e rolls Knowledge Streetwise [[1d20+@{Knowledge_Streetwise}]]" >Knowledge Streetwise</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Knowledge_Streetwise" value="[[@{Knowledge_Streetwise-ability}+@{Knowledge_Streetwise-Ranks}+@{Knowledge_Streetwise-Misc}]]" disabled="true"/>
+                    <td>
+                        <select class="sheet-number" name="attr_Knowledge_Streetwise-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Streetwise-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Streetwise-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge_Tactics-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge_Tactics" value="/e rolls Knowledge Tactics [[1d20+@{Knowledge_Tactics}]]" >Knowledge Tactics</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Knowledge_Tactics" value="[[@{Knowledge_Tactics-ability}+@{Knowledge_Tactics-Ranks}+@{Knowledge_Tactics-Misc}]]" disabled="true"/>
+                    <td>
+                        <select class="sheet-number" name="attr_Knowledge_Tactics-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Tactics-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Tactics-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge_Technology-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge_Technology" value="/e rolls Knowledge Technology [[1d20+@{Knowledge_Technology}]]" >Knowledge Technology</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Knowledge_Technology" value="[[@{Knowledge_Technology-ability}+@{Knowledge_Technology-Ranks}+@{Knowledge_Technology-Misc}]]" disabled="true"/>
+                    <td>
+                        <select class="sheet-number" name="attr_Knowledge_Technology-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Technology-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Technology-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Knowledge_Theology_and_Philosophy-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Knowledge_Theology_and_Philosophy" value="/e rolls Knowledge Theology and Philosophy [[1d20+@{Knowledge_Theology_and_Philosophy}]]" >Knowledge Theology and Philosophy</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Knowledge_Theology_and_Philosophy" value="[[@{Knowledge_Theology_and_Philosophy-ability}+@{Knowledge_Theology_and_Philosophy-Ranks}+@{Knowledge_Theology_and_Philosophy-Misc}]]" disabled="true"/>
+                    <td>
+                        <select class="sheet-number" name="attr_Knowledge_Theology_and_Philosophy-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Theology_and_Philosophy-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Knowledge_Theology_and_Philosophy-Misc" value="0" /></td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" class="sheet-bigcheck" name="attr_Listen-CrossClass" value="2"/><span></span></td>
@@ -819,6 +906,23 @@
                     <td><input type="number" class="sheet-number" name="attr_Listen-Misc" value="0" /></td>
                 </tr>
                 <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Medicine-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Medicine" value="/e rolls Medicine [[1d20+@{Medicine}]]" >Medicine</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Medicine" value="[[@{Medicine-ability}+@{Medicine-Ranks}+@{Medicine-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Medicine-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Wisdom-mod}" selected>Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Medicine-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Medicine-Misc" value="0" /></td>
+                </tr>
+                <tr>
                     <td><input type="checkbox" class="sheet-bigcheck" name="attr_Move_Silently-CrossClass" value="2"/><span></span></td>
                     <td><button type="roll" class="sheet-btn" name="roll_Move_Silently" value="/e rolls Move Silently [[1d20+@{Move_Silently}]]" >Move Silently</button></td>
                     <td><input type="number" class="sheet-ability" name="attr_Move_Silently" value="[[@{Move_Silently-ability}+@{Move_Silently-Ranks}+@{Move_Silently-Misc}+@{Armor-Penalty}]]" disabled="true"/></td>
@@ -834,23 +938,6 @@
                     </td>
                     <td><input type="number" class="sheet-number" name="attr_Move_Silently-Ranks" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Move_Silently-Misc" value="0" /></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Navigate-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Navigate" value="/e rolls Listen [[1d20+@{Navigate}]]" >Navigate</button></td>
-                    <td><input type="number" class="sheet-ability" name="attr_Navigate" value="[[@{Navigate-ability}+@{Navigate-Ranks}+@{Navigate-Misc}]]" disabled="true"/></td>
-                    <td>
-                        <select class="sheet-number" name="attr_Navigate-ability" style="width:40px;">
-                            <option value="@{Strength-mod}">Str</option>
-                            <option value="@{Dexterity-mod}">Dex</option>
-                            <option value="@{Constitution-mod}">Con</option>
-                            <option value="@{Intelligence-mod}" selected>Int</option>
-                            <option value="@{Wisdom-mod}">Wis</option>
-                            <option value="@{Charisma-mod}">Cha</option>
-                        </select>
-                    </td>
-                    <td><input type="number" class="sheet-number" name="attr_Navigate-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Navigate-Misc" value="0" /></td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" class="sheet-bigcheck" name="attr_Perform1-CrossClass" value="2"/><span></span></td>
@@ -925,83 +1012,15 @@
                     <td>
                         <select class="sheet-number" name="attr_Pilot-ability" style="width:40px;">
                             <option value="@{Strength-mod}">Str</option>
-                            <option value="@{Dexterity-mod}" selected>Dex</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
                             <option value="@{Constitution-mod}">Con</option>
-                            <option value="@{Intelligence-mod}">Int</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
                             <option value="@{Wisdom-mod}">Wis</option>
                             <option value="@{Charisma-mod}">Cha</option>
                         </select>
-                    </rd>
+                    </td>
                     <td><input type="number" class="sheet-number" name="attr_Pilot-Ranks" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Pilot-Misc" value="0" /></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Profession-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Profession" value="/e rolls Profession [[1d20+@{Profession}]]" >Profession</button></td>
-                    <td><input type="number" class="sheet-ability" name="attr_Profession" value="[[@{Profession-ability}+@{Profession-Ranks}+@{Profession-Misc}]]" disabled="true"/></td>
-                    <td>
-                        <select class="sheet-number" name="attr_Profession-ability" style="width:40px;">
-                            <option value="@{Strength-mod}">Str</option>
-                            <option value="@{Dexterity-mod}">Dex</option>
-                            <option value="@{Constitution-mod}">Con</option>
-                            <option value="@{Intelligence-mod}">Int</option>
-                            <option value="@{Wisdom-mod}" selected>Wis</option>
-                            <option value="@{Charisma-mod}">Cha</option>
-                        </select>
-                    </rd>
-                    <td><input type="number" class="sheet-number" name="attr_Profession-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Profession-Misc" value="0" /></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Read_Write_Lang1-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Read_Write_Lang1" value="/e rolls Read/Write Language:@{Read_Write_Lang1-type} [[1d20+@{Read_Write_Lang1}]]" ><div class="sheet-smaller">Read/Write Lang.</div></button></td>
-                    <td>
-                        <div class="sheet-tooltips">
-                            <input type="number" class="sheet-ability" name="attr_Read_Write_Lang1" value="[[@{Read_Write_Lang1-ability}+@{Read_Write_Lang1-Ranks}+@{Read_Write_Lang1-Misc}]]" disabled="true"/>
-                            <span><input type="text" class="sheet-type" name="attr_Read_Write_Lang1-type" value="" placeholder="Language"/></span>
-                        </div>
-                    </td>
-                    <td>
-                        <select class="sheet-number" name="attr_Read_Write_Lang1-ability" style="width:40px;">
-                            <option value="0">-</option>
-                        </select>
-                    </td>
-                    <td><input type="number" class="sheet-number" name="attr_Read_Write_Lang1-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Read_Write_Lang1-Misc" value="0" /></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Read_Write_Lang2-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Read_Write_Lang2" value="/e rolls Read/Write Language:@{Read_Write_Lang2-type} [[1d20+@{Read_Write_Lang2}]]" ><div class="sheet-smaller">Read/Write Lang.</div></button></td>
-                    <td>
-                        <div class="sheet-tooltips">
-                            <input type="number" class="sheet-ability" name="attr_Read_Write_Lang2" value="[[@{Read_Write_Lang2-ability}+@{Read_Write_Lang2-Ranks}+@{Read_Write_Lang2-Misc}]]" disabled="true"/>
-                            <span><input type="text" class="sheet-type" name="attr_Read_Write_Lang2-type" value="" placeholder="Language"/></span>
-                        </div>
-                    </td>
-                    <td>
-                        <select class="sheet-number" name="attr_Read_Write_Lang2-ability" style="width:40px;">
-                            <option value="0">-</option>
-                        </select>
-                    </td>
-                    <td><input type="number" class="sheet-number" name="attr_Read_Write_Lang2-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Read_Write_Lang2-Misc" value="0" /></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Read_Write_Lang3-CrossClass" value="2"/><span></span></td>
-                    <td><button type="roll" class="sheet-btn" name="roll_Read_Write_Lang3" value="/e rolls Read/Write Language:@{Read_Write_Lang3-type} [[1d20+@{Read_Write_Lang3}]]" ><div class="sheet-smaller">Read/Write Lang.</div></button></td>
-                    <td>
-                        <div class="sheet-tooltips">
-                            <input type="number" class="sheet-ability" name="attr_Read_Write_Lang3" value="[[@{Read_Write_Lang3-ability}+@{Read_Write_Lang3-Ranks}+@{Read_Write_Lang3-Misc}]]" disabled="true"/>
-                            <span><input type="text" class="sheet-type" name="attr_Read_Write_Lang3-type" value="" placeholder="Language"/></span>
-                        </div>
-                    </td>
-                    <td>
-                        <select class="sheet-number" name="attr_Read_Write_Lang3-ability" style="width:40px;">
-                            <option value="0">-</option>
-                        </select>
-                    </td>
-                    <td><input type="number" class="sheet-number" name="attr_Read_Write_Lang3-Ranks" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Read_Write_Lang3-Misc" value="0" /></td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" class="sheet-bigcheck" name="attr_Repair-CrossClass" value="2"/><span></span></td>
@@ -1019,6 +1038,108 @@
                     </td>
                     <td><input type="number" class="sheet-number" name="attr_Repair-Ranks" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Repair-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Research_Biology-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Research_Biology" value="/e rolls Research Biology [[1d20+@{Research_Biology}]]" >Research Biology</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Research_Biology" value="[[@{Research_Biology-ability}+@{Research_Biology-Ranks}+@{Research_Biology-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Research_Biology-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Research_Biology-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Research_Biology-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Research_Physics-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Research_Physics" value="/e rolls Research Physics [[1d20+@{Research_Physics}]]" >Research Physics</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Research_Physics" value="[[@{Research_Physics-ability}+@{Research_Physics-Ranks}+@{Research_Physics-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Research_Physics-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Research_Physics-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Research_Physics-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Research_Chemistry-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Research_Chemistry" value="/e rolls Research Chemistry [[1d20+@{Research_Chemistry}]]" >Research Chemistry</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Research_Chemistry" value="[[@{Research_Chemistry-ability}+@{Research_Chemistry-Ranks}+@{Research_Chemistry-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Research_Chemistry-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Research_Chemistry-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Research_Chemistry-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Research_Quantum_Physics-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Research_Quantum_Physics" value="/e rolls Research Quantum Physics [[1d20+@{Research_Quantum_Physics}]]" >Research Quantum Physics</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Research_Quantum_Physics" value="[[@{Research_Quantum_Physics-ability}+@{Research_Quantum_Physics-Ranks}+@{Research_Quantum_Physics-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Research_Quantum_Physics-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Research_Quantum_Physics-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Research_Quantum_Physics-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Research_Engineering-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Research_Engineering" value="/e rolls Research Engineering [[1d20+@{Research_Engineering}]]" >Research Engineering</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Research_Engineering" value="[[@{Research_Engineering-ability}+@{Research_Engineering-Ranks}+@{Research_Engineering-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Research_Engineering-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Research_Engineering-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Research_Engineering-Misc" value="0" /></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="sheet-bigcheck" name="attr_Research-CrossClass" value="2"/><span></span></td>
+                    <td><button type="roll" class="sheet-btn" name="roll_Research" value="/e rolls Research [[1d20+@{Research}]]" >Research</button></td>
+                    <td><input type="number" class="sheet-ability" name="attr_Research" value="[[@{Research-ability}+@{Research-Ranks}+@{Research-Misc}]]" disabled="true"/></td>
+                    <td>
+                        <select class="sheet-number" name="attr_Research-ability" style="width:40px;">
+                            <option value="@{Strength-mod}">Str</option>
+                            <option value="@{Dexterity-mod}">Dex</option>
+                            <option value="@{Constitution-mod}">Con</option>
+                            <option value="@{Intelligence-mod}" selected>Int</option>
+                            <option value="@{Wisdom-mod}">Wis</option>
+                            <option value="@{Charisma-mod}">Cha</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_Research-Ranks" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Research-Misc" value="0" /></td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" class="sheet-bigcheck" name="attr_Research-CrossClass" value="2"/><span></span></td>
@@ -1644,365 +1765,3 @@
         </div>
     </div>
 </div>
-<!-- Tab 5 FX -->
-<div class="sheet-section-5">
-    <h4>FX Abilities</h4>
-    <table class="sheet-tableII">
-        <tr>
-            <th class="sheet-heading">Fx Source</th>
-            <th class="sheet-heading">Level</th>
-            <th class="sheet-heading">Attribute</th>
-            <th class="sheet-heading">Fx<br>Known</th>
-            <th class="sheet-heading">Max<br>Known</th>
-            <th class="sheet-heading">Power Point<br>Max</th>
-            <th class="sheet-heading">Power Point<br>Current</th>
-            <th></th>
-        </tr>
-        <tr>
-            <td><input type="text" class="sheet-number" name="attr_fx-Source" value="" placeholder="Arcane caster, Psychic" style="width:200px"/></td>
-            <td><input type="number" class="sheet-number" name="attr_fx-CsdterLevel" value="0" /></td>
-            <td>
-                <select class="sheet-number" name="attr_fx-Attribute" >
-                    <option value="@{Strength-mod}">Strength</option>
-                    <option value="@{Dexterity-mod}">Dexterity</option>
-                    <option value="@{Constitution-mod}">Constitution</option>
-                    <option value="@{Intelligence-mod}" selected>Intelligence</option>
-                    <option value="@{Wisdom-mod}">Wisdom</option>
-                    <option value="@{Charisma-mod}">Charisma</option>
-                </select></td>
-            <td><input type="number" class="sheet-number" name="attr_fx-Known" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_fx-Max_Known" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_fx-PP_Max" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_fx-PP_Current" value="0" /></td>
-            <th></th>
-        </tr>
-    </table>
-    <br>
-    <div class='sheet-2colrow'>
-        <div class='sheet-col'>
-            <fieldset class="repeating_FX1">
-                <table class="sheet-tableII" style="width:400px">
-                    <tr>
-                        <th><button type="roll" class="sheet-fxbtn" name="FX_roll" value="&{template:fx}{{character= @{character_name}}} {{fx= @{FX-Name}}}{{DC= @{FX-DC}}} @{FX-include1} @{FX-include2} @{FX-include3} @{FX-include4} @{FX-include5} @{FX-include6} @{FX-include7} @{FX-include8} @{FX-include9} @{FX-include10} @{FX-include11}">FX</button></th>
-                        <th class="sheet-heading">Name</th>
-                        <td><input type="text" class="sheet-number" name="attr_FX-Name" value="" style="width:200px"/></td>
-                        <td><input type="checkbox" class="sheet-bigcheck" name="attr_FX-Show" value="1" /><span></span></td>
-                    </tr>
-                </table>
-                <input type="checkbox" class="sheet-hidden sheet-hider" name="attr_FX-Show" value="1" /><span></span>
-                <div class="sheet-hold">
-                    <table class="sheet-tableII" style="width:400px">
-                        <tr>
-                            <th class="sheet-heading" colspan="2">Include?</th>
-                            <th class="sheet-heading"></th>
-                            <th class="sheet-heading"></th>
-                            <th class="sheet-heading"></th>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading">N</th>
-                            <th class="sheet-heading">Y</th>
-                            <th class="sheet-heading"></th>
-                            <th class="sheet-heading"></th>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include1" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include1" value="{{Decriptors= @{FX-Decriptors}}}" /><span></span></th>
-                            <th class="sheet-heading">Decriptors</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Decriptors" style="width:200px" /></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include2" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include2" value="{{Level= @{FX-Level}}}" /><span></span></th>
-                            <th class="sheet-heading">Level / DC</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Level" value="0" style="width:100px"/>/<input type="number" class="sheet-number" name="attr_FX-DC" value='10 + @{FX-Level} + @{fx-Attribute}' style="width:100px" disabled='true'/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include3" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include3" value="{{Components= @{FX-Components}}}" /><span></span></th>
-                            <th class="sheet-heading">Components</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Components" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include4" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include4" value="{{Casting_Time= @{FX-Casting_Time}}}" /><span></span></th>
-                            <th class="sheet-heading">Casting Time</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Casting_Time" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include5" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include5" value="{{Range= @{FX-Range}}}" /><span></span></th>
-                            <th class="sheet-heading">Range</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Range" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include6" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include6" value="{{Effect= @{FX-Effect}}}" /><span></span></th>
-                            <th class="sheet-heading">Effect</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Effect" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include7" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include7" value="{{Area= @{FX-Area}}}" /><span></span></th>
-                            <th class="sheet-heading">Area</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Area" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include8" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include8" value="{{Duration= @{FX-Duration}}}" /><span></span></th>
-                            <th class="sheet-heading">Duration</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Duration" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include9" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include9" value="{{Saving_Throw= @{FX-Saving_Throw}}}" /><span></span></th>
-                            <th class="sheet-heading">Saving Throw</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Saving_Throw" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include10" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include10" value="{{Resistance}= @{FX-Resistance}}" /><span></span></th>
-                            <th class="sheet-heading">Resistance</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Resistance" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include11" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include11" value="{{Descriptive_Text= @{FX-Descriptive_Text}}}" /><span></span></th>
-                            <th class="sheet-heading">Descriptive Text</th>
-                            <td><textarea class="sheet-notes" name="attr_FX-Descriptive_Text"></textarea></td>
-                        </tr>
-                    </table>
-                </div>
-            </fieldset>
-        </div>
-        <div class='sheet-col'>
-            <fieldset class="repeating_FX2">
-                <table class="sheet-tableII" style="width:400px">
-                    <tr>
-                        <th><button type="roll" class="sheet-fxbtn" name="FX_roll" value="&{template:fx}{{character= @{character_name}}}{{DC= @{FX-DC}}} {{fx= @{FX-Name}}} @{FX-include1} @{FX-include2} @{FX-include3} @{FX-include4} @{FX-include5} @{FX-include6} @{FX-include7} @{FX-include8} @{FX-include9} @{FX-include10} @{FX-include11}">FX</button></th>
-                        <th class="sheet-heading">Name</th>
-                        <td><input type="text" class="sheet-number" name="attr_FX-Name" value="" style="width:200px"/></td>
-                        <td><input type="checkbox" class="sheet-bigcheck" name="attr_FX-Show" value="1" /><span></span></td>
-                    </tr>
-                </table>
-                <input type="checkbox" class="sheet-hidden sheet-hider" name="attr_FX-Show" value="1" /><span></span>
-                <div class="sheet-hold">
-                    <table class="sheet-tableII" style="width:400px">
-                        <tr>
-                            <th class="sheet-heading" colspan="2">Include?</th>
-                            <th class="sheet-heading"></th>
-                            <th class="sheet-heading"></th>
-                            <th class="sheet-heading"></th>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading">N</th>
-                            <th class="sheet-heading">Y</th>
-                            <th class="sheet-heading"></th>
-                            <th class="sheet-heading"></th>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include1" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include1" value="{{Decriptors= @{FX-Decriptors}}}" /><span></span></th>
-                            <th class="sheet-heading">Decriptors</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Decriptors" style="width:200px" /></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include2" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include2" value="{{Level= @{FX-Level}}}" /><span></span></th>
-                            <th class="sheet-heading">Level / DC</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Level" value="0" style="width:100px"/>/<input type="text" class="sheet-number" name="attr_FX-DC" value="10 + @{FX-Level} + @{fx-Attribute}" style="width:100px" disabled='true'/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include3" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include3" value="{{Components= @{FX-Components}}}" /><span></span></th>
-                            <th class="sheet-heading">Components</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Components" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include4" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include4" value="{{Casting_Time= @{FX-Casting_Time}}}" /><span></span></th>
-                            <th class="sheet-heading">Casting Time</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Casting_Time" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include5" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include5" value="{{Range= @{FX-Range}}}" /><span></span></th>
-                            <th class="sheet-heading">Range</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Range" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include6" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include6" value="{{Effect= @{FX-Effect}}}" /><span></span></th>
-                            <th class="sheet-heading">Effect</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Effect" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include7" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include7" value="{{Area= @{FX-Area}}}" /><span></span></th>
-                            <th class="sheet-heading">Area</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Area" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include8" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include8" value="{{Duration= @{FX-Duration}}}" /><span></span></th>
-                            <th class="sheet-heading">Duration</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Duration" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include9" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include9" value="{{Saving_Throw= @{FX-Saving_Throw}}}" /><span></span></th>
-                            <th class="sheet-heading">Saving Throw</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Saving_Throw" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include10" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include10" value="{{Resistance}= @{FX-Resistance}}" /><span></span></th>
-                            <th class="sheet-heading">Resistance</th>
-                            <td><input type="text" class="sheet-number" name="attr_FX-Resistance" style="width:200px"/></td>
-                        </tr>
-                        <tr>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include11" value="" checked/><span></span></th>
-                            <th class="sheet-heading"><input type="radio" class="sheet-bigcheck sheet-white" name="attr_FX-include11" value="{{Descriptive_Text= @{FX-Descriptive_Text}}}" /><span></span></th>
-                            <th class="sheet-heading">Descriptive Text</th>
-                            <td><textarea class="sheet-notes" name="attr_FX-Descriptive_Text"></textarea></td>
-                        </tr>
-                    </table>
-                </div>
-            </fieldset>
-        </div>
-    </div>
-</div>
-
-    		
-    </div>
-</div>
-<!-- rolltemplates -->
-<rolltemplate class="sheet-rolltemplate-show">
-    <table>
-        <tr>
-            <th>{{title}}</th>
-        </tr>
-        <tr>
-            <td><i>{{details}}</i></td>
-        </tr>
-</rolltemplate>
-
-<rolltemplate class="sheet-rolltemplate-attack">
-    <table>
-        <tr>
-            <td class="sheet-detail" colspan="2"><i><b>{{character}}</b> attacks with {{weapon}} </i></td>    
-        </tr>
-        <tr>
-            <td>Attack</td>
-            <td><span class="tcat">{{attack}}</span></td>
-        </tr>            
-            {{#rollWasCrit() attack}}
-        <tr>
-                <td class="sheet-confirm">Confirm:</td>
-                <td class="sheet-confirm"><span class="tcat">{{confirm}}</span></td>
-        </tr>
-            {{/rollWasCrit() attack}}
-        <tr>
-            <td>Damage</td>
-            <td class="sheet-damage"><span class="tcat">{{damage}}</span></td>
-        </tr>            
-            {{#rollWasCrit() attack}}
-        <tr>
-                <td class="sheet-confirm">Crit:</td>
-                <td class="sheet-confirm sheet-damage"><span class="tcat">{{dmgcrit}}</span></td>
-        </tr>
-            {{/rollWasCrit() attack}}
-        <tr>
-            <td colspan="2">{{details}}</td>
-        </tr> 
-        <tr>
-            <td class="sheet-last_left"></td>
-            <td class="sheet-last_right"></td>
-        </tr> 
-    </table>
-</rolltemplate>
-<rolltemplate class="sheet-rolltemplate-fx">
-    <table>
-        <tr>
-            <th colspan="2">{{fx}}</th>
-        </tr>
-        <tr>
-            <th>DC</th>
-            <th>{{DC}}</th>
-        </tr>
-        {{#Decriptors}} 
-        <tr>
-            <td>Decriptors</td>
-            <td>{{Decriptors}}</td>
-        </tr>
-        {{/Decriptors}} 
-        {{#Level}} 
-        <tr>
-            <td>Level</td>
-            <td>{{Level}}</td>
-        </tr>
-        {{/Level}} 
-
-        {{#Components}} 
-        <tr>
-            <td>Components</td>
-            <td>{{Components}}</td>
-        </tr>
-        {{/Components}} 
-
-        {{#Casting_Time}} 
-        <tr>
-            <td>Casting Time</td>
-            <td>{{Casting_Time}}</td>
-        </tr>
-        {{/Casting_Time}} 
-
-        {{#Range}} 
-        <tr>
-            <td>Range</td>
-            <td>{{Range}}</td>
-        </tr>
-        {{/Range}} 
-
-        {{#Effect}} 
-        <tr>
-            <td>Effect</td>
-            <td>{{Effect}}</td>
-        </tr>
-        {{/Effect}} 
-
-        {{#Area}} 
-        <tr>
-            <td>Area</td>
-            <td>{{Area}}</td>
-        </tr>
-        {{/Area}} 
-
-        {{#Duration}} 
-        <tr>
-            <td>Duration</td>
-            <td>{{Duration}}</td>
-        </tr>
-        {{/Duration}} 
-
-        {{#Saving_Throw}} 
-        <tr>
-            <td>Saving Throw</td>
-            <td>{{Saving_Throw}}</td>
-        </tr>
-        {{/Saving_Throw}} 
-
-        {{#Resistance}} 
-        <tr>
-            <td>Resistance</td>
-            <td>{{Resistance}}</td>
-        </tr>
-        {{/Resistance}} 
-
-        {{#Descriptive_Text}} 
-        <tr>
-            <td colspan="2"><i>{{Descriptive_Text}}</i></td>
-        </tr>
-        {{/Descriptive_Text}} 
-    </table>
-
-</rolltemplate>
