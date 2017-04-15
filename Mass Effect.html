@@ -165,7 +165,7 @@
                     <th><input type="number" class="sheet-ability" name="attr_Strength" value="@{Strength-Base}+@{Strength-Equipment}+@{Strength-Other}" disabled="true"/></th>
                     <th><input type="number" class="sheet-ability" name="attr_Strength-mod" value="[[floor((@{Strength}-10)/2)]]" disabled="true"/></th>
                     <td><input type="number" class="sheet-number" name="attr_Strength-Base" value="10"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Strength-Equipment" value="0"/></d>
+                    <td><input type="number" class="sheet-number" name="attr_Strength-Equipment" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Strength-Other" value="0"/></td>
                 </tr>
                 <tr>
@@ -173,7 +173,7 @@
                     <th><input type="number" class="sheet-ability" name="attr_Dexterity" value="@{Dexterity-Base}+@{Dexterity-Equipment}+@{Dexterity-Other}" disabled="true"/></th>
                     <th><input type="number" class="sheet-ability" name="attr_Dexterity-mod" value="[[floor((@{Dexterity}-10)/2)]]" disabled="true"/></th>
                     <td><input type="number" class="sheet-number" name="attr_Dexterity-Base" value="10"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Dexterity-Equipment" value="0"/></d>
+                    <td><input type="number" class="sheet-number" name="attr_Dexterity-Equipment" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Dexterity-Other" value="0"/></td>
                 </tr>
                 <tr>
@@ -181,7 +181,7 @@
                     <th><input type="number" class="sheet-ability" name="attr_Constitution" value="@{Constitution-Base}+@{Constitution-Equipment}+@{Constitution-Other}" disabled="true"/></th>
                     <th><input type="number" class="sheet-ability" name="attr_Constitution-mod" value="[[floor((@{Constitution}-10)/2)]]" disabled="true"/></th>
                     <td><input type="number" class="sheet-number" name="attr_Constitution-Base" value="10"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Constitution-Equipment" value="0"/></d>
+                    <td><input type="number" class="sheet-number" name="attr_Constitution-Equipment" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Constitution-Other" value="0"/></td>
                 </tr>
                 <tr>
@@ -189,7 +189,7 @@
                     <th><input type="number" class="sheet-ability" name="attr_Intelligence" value="@{Intelligence-Base}+@{Intelligence-Equipment}+@{Intelligence-Other}" disabled="true"/></th>
                     <th><input type="number" class="sheet-ability" name="attr_Intelligence-mod" value="[[floor((@{Intelligence}-10)/2)]]" disabled="true"/></th>
                     <td><input type="number" class="sheet-number" name="attr_Intelligence-Base" value="10"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Intelligence-Equipment" value="0"/></d>
+                    <td><input type="number" class="sheet-number" name="attr_Intelligence-Equipment" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Intelligence-Other" value="0"/></td>
                 </tr>
                 <tr>
@@ -197,7 +197,7 @@
                     <th><input type="number" class="sheet-ability" name="attr_Wisdom" value="@{Wisdom-Base}+@{Wisdom-Equipment}+@{Wisdom-Other}" disabled="true"/></th>
                     <th><input type="number" class="sheet-ability" name="attr_Wisdom-mod" value="[[floor((@{Wisdom}-10)/2)]]" disabled="true"/></th>
                     <td><input type="number" class="sheet-number" name="attr_Wisdom-Base" value="10"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Wisdom-Equipment" value="0"/></d>
+                    <td><input type="number" class="sheet-number" name="attr_Wisdom-Equipment" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Wisdom-Other" value="0"/></td>
                 </tr>
                 <tr>
@@ -205,7 +205,7 @@
                     <th><input type="number" class="sheet-ability" name="attr_Charisma" value="@{Charisma-Base}+@{Charisma-Equipment}+@{Charisma-Other}" disabled="true"/></th>
                     <th><input type="number" class="sheet-ability" name="attr_Charisma-mod" value="[[floor((@{Charisma}-10)/2)]]" disabled="true"/></th>
                     <td><input type="number" class="sheet-number" name="attr_Charisma-Base" value="10"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Charisma-Equipment" value="0"/></d>
+                    <td><input type="number" class="sheet-number" name="attr_Charisma-Equipment" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Charisma-Other" value="0"/></td>
                 </tr>
             </table>
@@ -217,12 +217,12 @@
                     <th class="sheet-heading">Total</th>
                     <th class="sheet-heading">Base</th>
                     <th class="sheet-heading">Ability</th>
-                    <th class="sheet-heading">Equipment<br>Bonus</th>
+                    <th class="sheet-heading">Enhanced Fibers</th>
                     <th class="sheet-heading">Other<br>Bonus</th>
                 </tr>
                 <tr>
                     <th><button type="roll" class="sheet-skillbtn" name="roll_Fortitude" value="/e rolls Fortitude [[1d20+@{Fortitude}]]" >FORTITUDE<br>Constitution</button></th>
-                    <th><input type="number" class="sheet-ability" name="attr_Fortitude" value="[[@{Fortitude-Base}+@{Fortitude-ability}+@{Fortitude-Equipment}+@{Fortitude-Other}]]" disabled='true'/></th>
+                    <th><input type="number" class="sheet-ability" name="attr_Fortitude" value="[[@{Fortitude-Base}+@{Fortitude-ability}+@{Fortitude-Enhanced_Fibers}+@{Fortitude-Other}]]" disabled='true'/></th>
                     <td><input type="number" class="sheet-number" name="attr_Fortitude-Base" value="@{Class1-Fort}+@{Class2-Fort}+@{Class3-Fort}+@{Class4-Fort}+@{Class5-Fort}+@{Class6-Fort}" disabled='true'/></td>
                     <td>
                         <select class="sheet-number" name="attr_Fortitude-ability">
@@ -234,12 +234,12 @@
                             <option value="@{Charisma-mod}">Charisma</option>
                         </select>
                     </td>
-                    <td><input type="number" class="sheet-number" name="attr_Fortitude-Equipment" value="0"/></d>
+                    <td><input type="number" class="sheet-number" name="attr_Fortitude-Enhanced_Fibers" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Fortitude-Other" value="0"/></td>
                 </tr>
                 <tr>
                     <th><button type="roll" class="sheet-skillbtn" name="roll_Reflex" value="/e rolls Reflex [[1d20+@{Reflex}]]" >REFLEX<br>Dexterity</button></th>
-                    <th><input type="number" class="sheet-ability" name="attr_Reflex" value="[[@{Reflex-Base}+@{Reflex-ability}+@{Reflex-Equipment}+@{Reflex-Other}]]" disabled='true'/></th>
+                    <th><input type="number" class="sheet-ability" name="attr_Reflex" value="[[@{Reflex-Base}+@{Reflex-ability}+@{Reflex-Enhanced_Fibers}+@{Reflex-Other}]]" disabled='true'/></th>
                     <td><input type="number" class="sheet-number" name="attr_Reflex-Base" value="@{Class1-Refl}+@{Class2-Refl}+@{Class3-Refl}+@{Class4-Refl}+@{Class5-Refl}+@{Class6-Refl}" disabled='true'/></td>
                     <td>
                         <select class="sheet-number" name="attr_Reflex-ability">
@@ -251,12 +251,12 @@
                             <option value="@{Charisma-mod}">Charisma</option>
                         </select>
                     </td>
-                    <td><input type="number" class="sheet-number" name="attr_Reflex-Equipment" value="0"/></d>
+                    <td><input type="number" class="sheet-number" name="attr_Reflex-Enhanced_Fibers" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Reflex-Other" value="0"/></td>
                 </tr>
                 <tr>
                     <th><button type="roll" class="sheet-skillbtn" name="roll_Will" value="/e rolls Will [[1d20+@{Will}]]" >WILL<br>Wisdom</button></th>
-                    <th><input type="number" class="sheet-ability" name="attr_Will" value="[[@{Will-Base} + @{Will-ability} + @{Will-Equipment} + @{Will-Other}]]" disabled='true'/></th>
+                    <th><input type="number" class="sheet-ability" name="attr_Will" value="[[@{Will-Base} + @{Will-ability} + @{Will-Enhanced_Fibers} + @{Will-Other}]]" disabled='true'/></th>
                     <td><input type="number" class="sheet-number" name="attr_Will-Base" value="@{Class1-Will}+@{Class2-Will}+@{Class3-Will}+@{Class4-Will}+@{Class5-Will}+@{Class6-Will}" disabled='true'/></td>
                     <td>
                         <select class="sheet-number" name="attr_Will-ability">
@@ -268,7 +268,7 @@
                             <option value="@{Charisma-mod}">Charisma</option>
                         </select>
                     </td>
-                    <td><input type="number" class="sheet-number" name="attr_Will-Equipment" value="0"/></d>
+                    <td><input type="number" class="sheet-number" name="attr_Will-Enhanced_Fibers" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Will-Other" value="0"/></td>
                 </tr>
             </table>
@@ -1340,11 +1340,11 @@
                     <td><input type="number" class="sheet-number" name="attr_MAB-Misc" value="0"/></td>
                 </tr>
                 <tr>
-                    <th style="font-size:0.8em;"><button type="roll" class="sheet-skillbtn" name="roll_grapple" title="roll_grapple" value="/e rolls Grapple Attack Bonus [[1d20+@{grapple}]]" >Grapple<br>Attack Bonus</button></th>
-                    <th><input type="number" class="sheet-ability" name="attr_grapple" title="@{grapple}" value="[[@{grapple-BAB}+@{grapple-ability}+@{grapple-Size}+@{grapple-Misc}]]" disabled='true'/></th>
-                    <td><input type="number" class="sheet-number" name="attr_grapple-BAB" value="@{BAB}"  disabled='true'/></td>
+                    <th style="font-size:0.8em;"><button type="roll" class="sheet-skillbtn" name="roll_throwing" title="roll_throwing" value="/e rolls Throwing Attack Bonus [[1d20+@{throwing}]]" >Throwing<br>Attack Bonus</button></th>
+                    <th><input type="number" class="sheet-ability" name="attr_throwing" title="@{throwing}" value="[[@{throwing-BAB}+@{throwing-ability}+@{throwing-Size}+@{throwing-Misc}]]" disabled='true'/></th>
+                    <td><input type="number" class="sheet-number" name="attr_throwing-BAB" value="@{BAB}"  disabled='true'/></td>
                     <td>
-                        <select class="sheet-number" name="attr_grapple-ability" style="width:40px;">
+                        <select class="sheet-number" name="attr_throwing-ability" style="width:40px;">
                             <option value="@{Strength-mod}" selected>Str</option>
                             <option value="@{Dexterity-mod}">Dex</option>
                             <option value="@{Constitution-mod}">Con</option>
@@ -1354,7 +1354,7 @@
                         </select>
                     </td>
                     <td>
-                        <select class="sheet-number" name="attr_grapple-Size" style="width:40px;">
+                        <select class="sheet-number" name="attr_throwing-Size" style="width:40px;">
                             <option value="0" selected>Same or smaller Size</option>
                             <option value="4">1 size larger</option>
                             <option value="8">2 sizes larger</option>
@@ -1366,7 +1366,7 @@
                             <option value="32">8 sizes larger</option>
                         </select>
                     </td>
-                    <td><input type="number" class="sheet-number" name="attr_grapple-Misc" value="0"/></td>
+                    <td><input type="number" class="sheet-number" name="attr_throwing-Misc" value="0"/></td>
                 </tr>
                 <tr>
                     <th style="font-size:0.8em;"><button type="roll" class="sheet-skillbtn" name="roll_RAB" title="roll_RAB" value="/e rolls Ranged Attack Bonus [[1d20+@{RAB}]]" >Ranged<br>Attack Bonus</button></th>
@@ -1420,44 +1420,36 @@
                     <th><div class="sheet-font">Defense</div></th>
                     <th><input type="number" class="sheet-ability" name="attr_Defense" title="@{Defense}" value="@{Defense-Base}+@{Defense-Class}+@{Defense-Equipment}+@{Defense-Dex}+@{Defense-Size}+@{Defense-Misc}" disabled="true"/></th>
                     <td><input type="number" class="sheet-number" name="attr_Defense-Base" value="10" disabled='true'/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Defense-Class" value="@{Class1-Defense}+@{Class2-Defense}+@{Class3-Defense}+@{Class4-Defense}+@{Class5-Defense}+@{Class6-Defense}" disabled='true'/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Defense-Equipment" value="@{Armor-Equipment}" disabled='true'/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Defense-Shield" value="@{Shield-Equipment}" disabled='true'/></td>
+                    <td><input type="number" class="sheet-number" name="attr_Defense-Damage_Reduction" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Defense-Dex" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Defense-Size" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Defense-Misc" value="0"/></td>
                 </tr>
                 <tr>
                     <th></th>
                     <th class="sheet-heading">Total</th>
                     <th class="sheet-heading">Base</th>
-                    <th class="sheet-heading">Class</th>
-                    <th class="sheet-heading">Armor</th>
+                    <th class="sheet-heading">Shield</th>
+                    <th class="sheet-heading">Damage Reduction</th>
                     <th class="sheet-heading">Dex</th>
-                    <th class="sheet-heading">Size</th>
                     <th class="sheet-heading">Misc</th>
                 </tr>
             </table>
             <br>
-            <h4>Armor/Protective Item</h4>
+            <h4>Armor</h4>
             <table class="sheet-tableII">
                 <tr>
                     <th></th>
                     <th class="sheet-heading">Name</th>
                     <th class="sheet-heading">Type</th>
-                    <th class="sheet-heading">Size</th>
-                    <th class="sheet-heading">Speed</th>
-                    <th class="sheet-heading" title="Proficiency Bonus">Prof.<br>Bonus</th>
-                    <th class="sheet-heading" title="Proficiency">Prof.</th>
+                    <th class="sheet-heading">Customizable</th>
                     <th></th>
                 </tr>
                 <tr>
                     <th></th>
                     <td><input type="text" class="sheet-number" name="attr_Armor-Name" value="" /></td>
                     <td><input type="text" class="sheet-number" name="attr_Armor-Type" value=""/></td>
-                    <td><input type="text" class="sheet-number" name="attr_Armor-Size" value="" style="width:60px;"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Armor-Speed" value="0" /></td>
-                    <td><input type="number" class="sheet-number" name="attr_Armor-Proficient" value="0"/></td>
-                    <td><input type="radio" class="sheet-bigcheck" name="attr_Armor-Equipment" value="@{Armor-Proficient}" checked/><span></span></td>
+                    <td><input type="text" class="sheet-number" name="attr_Armor-Customizable" value=""/></td>
                     <th></th>
                 </tr>
                 <tr>
@@ -1465,8 +1457,6 @@
                     <td colspan="2"><input type="text" class="sheet-number" name="attr_Armor-Special Properties" value="" style="width:100%"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Armor-Penalty" value="0"/></td>
                     <td><input type="number" class="sheet-number" name="attr_Armor-Max_Dex" value="0"/></td>
-                    <td><input type="number" class="sheet-number" name="attr_Armor-Non_Proficient" value="0"/></td>
-                    <td><input type="radio" class="sheet-bigcheck" name="attr_Armor-Equipment" value="@{Armor-Non_Proficient}"/><span></span></td>
                     <th></th>
                 </tr>
                 <tr>
@@ -1474,7 +1464,6 @@
                     <th class="sheet-heading" colspan="2">Special Properties</th>
                     <th class="sheet-heading">Armor Penalty</th>
                     <th class="sheet-heading">Max Dex</th>
-                    <th class="sheet-heading" colspan="2" title="NOn-Proficiency Bonus">Non-Prof.<br>Bonus</th>
                     <th></th>
                 </tr>
             </table>
