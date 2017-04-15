@@ -1546,10 +1546,10 @@
         </table>
     </fieldset>
 </div>
-<!-- Tab 3 Feats & Talents -->
+<!-- Tab 3 Feats & Specializations -->
 <div class="sheet-section-3">
     <div class='sheet-2colrow'>
-        <h3>Feats & Powers</h3>
+        <h3>Feats & Specializations</h3>
         <div class='sheet-col'>
             <h4>Feats</h4>
             <fieldset class="repeating_Feats">
@@ -1571,20 +1571,20 @@
             </fieldset>
         </div>
         <div class='sheet-col'>
-            <h4>Biotic Powers</h4>
-            <fieldset class="repeating_Powers">
+            <h4>Specializations</h4>
+            <fieldset class="repeating_Specializations">
                 <table class="sheet-table">
                     <tr>
-                        <td><button type="roll" class="sheet-btn" name="roll_Power-show" value="&{template:show}{{character= @{character_name}}}  {{title= @{Power-name}}}{{details= @{Power-details}}}" style="width:60px;">Show</button></td>
-                        <td><input type="text" class="sheet-number" name="attr_Power-name" placeholder="Power Name" style="width:200px;"/></td>
-                        <th><input type="checkbox" class="sheet-bigcheck" name="attr_Power-show" value="1"/><span></span></th>
+                        <td><button type="roll" class="sheet-btn" name="roll_Specialization-show" value="&{template:show}{{character= @{character_name}}}  {{title= @{Specialization-name}}}{{details= @{Specialization-details}}}" style="width:60px;">Show</button></td>
+                        <td><input type="text" class="sheet-number" name="attr_Specialization-name" placeholder="Specialization Name" style="width:200px;"/></td>
+                        <th><input type="checkbox" class="sheet-bigcheck" name="attr_Specialization-show" value="1"/><span></span></th>
                     </tr>
                 </table>
-                <input type="checkbox" class="sheet-hidden sheet-hider" name="attr_Power-show" value="1"/><span></span>
+                <input type="checkbox" class="sheet-hidden sheet-hider" name="attr_Specialization-show" value="1"/><span></span>
                 <div class="sheet-hold">
                     <table class="sheet-table" style="width:100%;">
                         <tr>
-                            <td><textarea class="sheet-notes" name="attr_Power-details" wrap="soft" placeholder="Power Details"></textarea></td>
+                            <td><textarea class="sheet-notes" name="attr_Specialization-details" wrap="soft" placeholder="Specialization Details"></textarea></td>
                         </tr>
                     </table>
                 </div>
