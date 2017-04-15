@@ -1475,18 +1475,31 @@
             <tr>
                 <th rowspan="4"><button type="roll" class="sheet-weapon" name="weapon_roll" value="&{template:attack}{{character= @{character_name}}}{{weapon= @{Weapon-Name}}}{{attack= [[1d20cs>@{Weapon-Critical} +[[@{Weapon-Attack_Bonus}]] ]]}} {{confirm= [[1d20 +[[@{Weapon-Attack_Bonus}]] ]]}} {{damage= [[@{Weapon-Damage} + @{Weapon-Damage_bonus} + @{Weapon-Damage_Misc}]]}}{{dmgcrit= [[(@{Weapon-Damage} + @{Weapon-Damage_bonus} + [[@{Weapon-Damage_Misc}]])*@{Weapon-Critical_multiplier}]]}} {{details= @{Weapon-Special_Properties}}}">Weapon</button></th>
                 <th class="sheet-heading">Name</th>
+                <th class="sheet-heading">Type</th>
                 <th class="sheet-heading">Total Bonus</th>
                 <th class="sheet-heading">BAB</th>
                 <th class="sheet-heading">Attribute</th>
-                <th class="sheet-heading">Misc Bonus</th>
+                <th class="sheet-heading">Rate of Fire</th>
                 <th class="sheet-heading">Critical</th>
-                <th class="sheet-heading">Size</th>
+                <th class="sheet-heading">Recoil</th>
                 <th class="sheet-heading">Ammo</th>
                 <th></th>
             </tr>
             <tr>
                 <td><input type="text" class="sheet-number" name="attr_Weapon-Name" value="" /></td>
-                <td><input type="number" class="sheet-number" name="attr_Weapon-Attack_Bonus" value="@{Weapon-BAB}+@{Weapon-Attribute}+@{Weapon-Attack_Misc}" disabled='true'/></td>
+                <td><input type="text" class="sheet-number" name="attr_Weapon-Type" value="@{Type}"disabled='true' /></td>
+                <td>
+                    <select class="sheet-number" name="attr_Weapon-Type" >
+                        <option value="Pistols">Pistols</option>
+                        <option value="Submachine Guns">Submachine Guns</option>
+                        <option value="Assault Rifles">Assault Rifles</option>
+                        <option value="Shotguns">Shotguns</option>
+                        <option value="Sniper Rifles">Sniper Rifles</option>
+                        <option value="Melee Weapons">Melee Weapons</option>
+                        <option value="Heavy Weapons">Heavy Weapons</option>
+                    </select>
+                </td>
+                <td><input type="number" class="sheet-number" name="attr_Weapon-Attack_Bonus" value="@{Weapon-BAB}+@{Weapon-Attribute}+@{Weapon-Recoil}"disabled='true'/></td>
                 <td><input type="number" class="sheet-number" name="attr_Weapon-BAB" value="@{BAB}"disabled='true'/></td>
                 <td>
                     <select class="sheet-number" name="attr_Weapon-Attribute" >
@@ -1498,9 +1511,16 @@
                         <option value="@{Charisma-mod}">Charisma</option>
                     </select>
                 </td>
-                <td><input type="number" class="sheet-number" name="attr_Weapon-Attack_Misc" value="0" /></td>
-                <td><input type="number" class="sheet-number" name="attr_Weapon-Critical" value="20" style="width:26px"/><input type="number" class="sheet-number" name="attr_Weapon-Critical_multiplier" value="2" style="width:24px"/></td>
-                <td><input type="text" class="sheet-number" name="attr_Weapon-Size" value="" /></td>
+                <td><input type="number" class="sheet-number" name="attr_Weapon-Rate_of_Fire" value="@{Rate_of_Fire}"disabled='true'/></td>
+                <td>
+                    <select class="sheet-number" name="attr_Weapon-Rate_of_Fire" >
+                        <option value="Single Shot">SS</option>
+                        <option value="Semi-Automatic">SA</option>
+                        <option value="Burst">B</option>
+                        <option value="Automatic">A</option>
+                    </select>
+                </td>
+                <td><input type="number" class="sheet-number" name="attr_Weapon-Critical" value="X" style="width:26px"/><input type="number" class="sheet-number" name="attr_Weapon-Critical_multiplier" value="2" style="width:24px"/></td>
                 <td><input type="number" class="sheet-number" name="attr_Weapon-Ammo" value="0"  style="width:100px"/></td>
                 <th></th>
             </tr>
